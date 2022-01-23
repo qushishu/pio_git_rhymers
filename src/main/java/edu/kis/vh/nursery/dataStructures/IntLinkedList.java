@@ -1,6 +1,6 @@
-package edu.kis.vh.nursery.list;
+package edu.kis.vh.nursery.dataStructures;
 
-public class IntLinkedList {
+public class IntLinkedList implements IntDataStructure {
 	/***
 	 * class represent LinkedList
 	 */
@@ -8,13 +8,14 @@ public class IntLinkedList {
 	private Node last;
 	private int i;
 
-	private static final int EMPTY = -1;
+	private static final int EMPTY = DEFAULT;
 
 
 	/***
 	 * Push an element at the starting(top) of the stack represented by LinkedList
 	 * @param i the element to push
 	 */
+	@Override
 	public void push(int i) {
 		if (last == null)
 			last = new Node(i);
@@ -29,6 +30,7 @@ public class IntLinkedList {
 	 * check the LinkedList is empty or not
 	 * @return true if LinkedList is empty or false otherwise
 	 */
+	@Override
 	public boolean isEmpty() {
 		return last == null;
 	}
@@ -37,6 +39,7 @@ public class IntLinkedList {
 	 * check the LinkedList is full or not
 	 * @return the boolean type depend on the LinkedList is full or not
 	 */
+	@Override
 	public boolean isFull() {
 		return false;
 	}
@@ -45,6 +48,7 @@ public class IntLinkedList {
 	 * return the top element of LinkedList
 	 * @return value of top element
 	 */
+	@Override
 	public int top() {
 		if (isEmpty())
 			return EMPTY;
@@ -55,6 +59,7 @@ public class IntLinkedList {
 	 * remove last element from LinkedList
 	 * @return removed element
 	 */
+	@Override
 	public int pop() {
 		if (isEmpty())
 			return EMPTY;

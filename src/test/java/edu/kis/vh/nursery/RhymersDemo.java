@@ -18,16 +18,16 @@ class RhymersDemo {
 
 		for (int i = 1; i < 15; i++)
 			for (int j = 0; j < 3; j++)
-				rhymers[j].countIn(i);
+				rhymers[j].push(i);
 
 		java.util.Random rn = new java.util.Random();
 		for (int i = 1; i < 15; i++)
-			rhymers[3].countIn(rn.nextInt(20));
+			rhymers[3].push(rn.nextInt(20));
 
 		//replace with enhanced for
 		for (DefaultCountingOutRhymer rhymer : rhymers) {
-			while (!rhymer.callCheck())
-				System.out.print(rhymer.countOut() + "  ");
+			while (!rhymer.isEmpty())
+				System.out.print(rhymer.pop() + "  ");
 			System.out.println();
 		}
 
