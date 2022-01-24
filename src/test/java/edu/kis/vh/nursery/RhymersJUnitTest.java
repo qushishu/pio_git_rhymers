@@ -45,7 +45,7 @@ public class RhymersJUnitTest {
 	@Test
 	public void testTop() {
 		IntArrayStack intArrayStack = new IntArrayStack();
-		final int EMPTY_STACK_VALUE = 0;
+		final int EMPTY_STACK_VALUE = intArrayStack.DEFAULT;
 
 		int result = intArrayStack.top();
 		Assert.assertEquals(EMPTY_STACK_VALUE, result);
@@ -62,7 +62,7 @@ public class RhymersJUnitTest {
 	@Test
 	public void testPop() {
 		IntArrayStack intArrayStack = new IntArrayStack();
-		final int EMPTY_STACK_VALUE = 0;
+		final int EMPTY_STACK_VALUE = intArrayStack.DEFAULT;
 
 		int result = intArrayStack.pop();
 		Assert.assertEquals(EMPTY_STACK_VALUE, result);

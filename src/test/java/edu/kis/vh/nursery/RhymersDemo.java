@@ -1,18 +1,28 @@
 package edu.kis.vh.nursery;
 
+import edu.kis.vh.nursery.dataStructures.IntLinkedList;
 import edu.kis.vh.nursery.factory.DefaultRhymersFactory;
+import edu.kis.vh.nursery.factory.LinkedListFactory;
 import edu.kis.vh.nursery.factory.Rhymersfactory;
+import edu.kis.vh.nursery.factory.StackFactory;
 
 class RhymersDemo {
 
 	public static void main(String[] args) {
+
 		Rhymersfactory factory = new DefaultRhymersFactory();
 
-		extracted(factory);
+		StackFactory stackFactory = new StackFactory();
+		operationFactory(stackFactory);
+
+		LinkedListFactory linkedListFactory = new LinkedListFactory();
+		operationFactory(linkedListFactory);
+
+		operationFactory(factory);
 
 	}
 
-	private static void extracted(Rhymersfactory factory) {
+	private static void operationFactory(Rhymersfactory factory) {
 		DefaultCountingOutRhymer[] rhymers = { factory.getStandardRhymer(), factory.getFalseRhymer(),
 				factory.getFifoRhymer(), factory.getHanoiRhymer()};
 
@@ -24,7 +34,6 @@ class RhymersDemo {
 		for (int i = 1; i < 15; i++)
 			rhymers[3].push(rn.nextInt(20));
 
-		//replace with enhanced for
 		for (DefaultCountingOutRhymer rhymer : rhymers) {
 			while (!rhymer.isEmpty())
 				System.out.print(rhymer.pop() + "  ");
