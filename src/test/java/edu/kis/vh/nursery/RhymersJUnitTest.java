@@ -102,10 +102,10 @@ public class RhymersJUnitTest {
 	@Test
 	public void testTop2() {
 		IntLinkedList intLinkedList = new IntLinkedList();
-		final int EMPTY_STACK_VALUE = intLinkedList.DEFAULT;
+		final int EMPTY_LIST_VALUE = intLinkedList.DEFAULT;
 
 		int result = intLinkedList.top();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(EMPTY_LIST_VALUE, result);
 
 		int testValue = 4;
 		intLinkedList.push(testValue);
@@ -119,10 +119,10 @@ public class RhymersJUnitTest {
 	@Test
 	public void testPop2() {
 		IntLinkedList intLinkedList = new IntLinkedList();
-		final int EMPTY_STACK_VALUE = intLinkedList.DEFAULT;
+		final int EMPTY_LIST_VALUE = intLinkedList.DEFAULT;
 
 		int result = intLinkedList.pop();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(EMPTY_LIST_VALUE, result);
 
 		int testValue = 4;
 		intLinkedList.push(testValue);
@@ -130,7 +130,7 @@ public class RhymersJUnitTest {
 		result = intLinkedList.pop();
 		Assert.assertEquals(testValue, result);
 		result = intLinkedList.pop();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(EMPTY_LIST_VALUE, result);
 	}
 
 
