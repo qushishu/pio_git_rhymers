@@ -1,6 +1,7 @@
 package edu.kis.vh.nursery;
 
 import edu.kis.vh.nursery.dataStructures.IntArrayStack;
+import edu.kis.vh.nursery.dataStructures.IntLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -75,5 +76,62 @@ public class RhymersJUnitTest {
 		result = intArrayStack.pop();
 		Assert.assertEquals(EMPTY_STACK_VALUE, result);
 	}
+
+	@Test
+	public void testPush2() {
+		IntLinkedList intLinkedList = new IntLinkedList();
+		int testValue = 4;
+		intLinkedList.push(testValue);
+
+		int result = intLinkedList.top();
+		Assert.assertEquals(testValue, result);
+	}
+
+	@Test
+	public void testIsEmpty2() {
+		IntLinkedList intLinkedList = new IntLinkedList();
+		boolean result = intLinkedList.isEmpty();
+		Assert.assertTrue(result);
+
+		intLinkedList.push(888);
+
+		result = intLinkedList.isEmpty();
+		Assert.assertFalse(result);
+	}
+
+	@Test
+	public void testTop2() {
+		IntLinkedList intLinkedList = new IntLinkedList();
+		final int EMPTY_STACK_VALUE = intLinkedList.DEFAULT;
+
+		int result = intLinkedList.top();
+		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+
+		int testValue = 4;
+		intLinkedList.push(testValue);
+
+		result = intLinkedList.top();
+		Assert.assertEquals(testValue, result);
+		result = intLinkedList.top();
+		Assert.assertEquals(testValue, result);
+	}
+
+	@Test
+	public void testPop2() {
+		IntLinkedList intLinkedList = new IntLinkedList();
+		final int EMPTY_STACK_VALUE = intLinkedList.DEFAULT;
+
+		int result = intLinkedList.pop();
+		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+
+		int testValue = 4;
+		intLinkedList.push(testValue);
+
+		result = intLinkedList.pop();
+		Assert.assertEquals(testValue, result);
+		result = intLinkedList.pop();
+		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+	}
+
 
 }
